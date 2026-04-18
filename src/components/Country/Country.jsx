@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Country.css';
 
-const Country = ({country}) => {
+const Country = ({country, handleVisitedCountries}) => {
     // console.log(country.flags.flags.alt);
+
+    console.log(handleVisitedCountries);
 
     const [visited, setVisited] = useState(false);
 
@@ -21,6 +23,7 @@ const Country = ({country}) => {
 
         // third system
         setVisited(!visited);
+        handleVisitedCountries(country);
     }
 
     return (
